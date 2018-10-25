@@ -1,7 +1,5 @@
 function find_s(extension,str){
 
-	// file
-
 	if (!fs.existsSync(extension)){
 	    return [];
 	}
@@ -36,9 +34,7 @@ if (process.argv.length>2){
 	var str = process.argv[3];
 	console.log(str);
 	var path = require('path');
-	//console.log(path);
 	var fs = require('fs');
-	//console.log(fs);
 	var results = [];
 
 	results =find_s(extension,str);
@@ -47,9 +43,9 @@ if (process.argv.length>2){
 	}
 	if (results.length>0){
 		for(var i=0;i<results.length;i++){
-			// if (path.extname(files[i])== '.'+extension){
-			// }
-			console.log(results[i]);
+			if (path.extname(files[i])== '.'+extension){
+				console.log(results[i]);
+			}
 		}
 	}
 }
